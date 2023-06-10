@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="web site.css">
+   <title>מסיבה של מתנפחים</title>
+   <div class= "company logo div">
+   <img class = "company_logo" src="logo.png"</img>
+   </div>
+  </head>
+  <body>
+    <header>
+      <h1>מסיבה של מתנפחים</h1>
+      <nav>
+        <ul>
+          <li><a href="about us.html">אודותינו</a></li>
+          <li><a href="services.html">ציוד למסיבות</a></li>
+          <li><a href="#contact">צור קשר</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+	<div class "back">
+      <section id="about">
+        <h2>ברוכים הבאים לאתר של חברת מסיבה של מתנפחים המספקת שירותים למסיבות השכרת ציוד ועוד</h2>
+      </section>
+      <section id="services">
+        <h2>השירותים שאנחנו מציעים</h2>
+        <ul>
+          <li>השכרת מתנפחים לאירועים</li>
+		  </div>
+		  <div>
+		  <div class="photes" >
+		  <img src="1.jpg" >
+		  <img src="2.jpg" >
+		  </div>
+		  </br>
+		  
+		  <div class="photes" >
+		  <img src="3.jpg" >
+		  <img src="4.jpg" >
+		  </div>
+		  </br>
+		  
+		  <div class="photes" >
+		  <img src="5.jpg" >
+		  <img src="6.jpg" >
+		  </div>
+		  </br>
+		  
+		   <div class="photes" >
+		  <img src="7.jpg" >
+		  <img src="8.jpg" >
+		  </div>
+		  </div>
+		  
+        </ul>
+      </section>
+      <section id="contact">
+        <h2>צור איתנו קשר</h2>
+        <form method="post" action="sendmail.php">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
+  
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+  
+  <label for="message">Message</label>
+  <textarea id="message" name="message" required></textarea>
+  
+  <button type="submit">Send</button>
+       </form>
+        </form>
+		<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+  
+  // Set the recipient email address here
+  $to = 'asaf138@gmail.com';
+  
+  // Set the subject here
+  $subject = 'New message from contact form';
+  
+  // Build the email message
+  $body = "Name: $name\n\n";
+  $body .= "Email: $email\n\n";
+  $body .= "Message:\n$message\n";
+  
+  // Send the email
+  if (mail($to, $subject, $body)) {
+    echo 'Your message has been sent successfully.';
+  } else {
+    echo 'There was a problem sending your message. Please try again later.';
+  }
+}
+?>
+
+      </section>
+	  </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 מסיבה של מתנפחים. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
